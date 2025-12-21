@@ -1,3 +1,6 @@
+let humanScore = 0;
+let computerScore = 0;
+
 function getComputerChoice() {
     let computerChoice = "";
     let randomNumber = Math.floor(Math.random()*3) + 1;
@@ -13,9 +16,9 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
+    let humanChoice = ""; 
     let humanPrompt = prompt("Choose either Rock, Paper or Scissors");
-    let humanChoice = "";
-
+    
     if(humanPrompt.toLowerCase() === "rock") {
         humanChoice = "Rock";   
     } else if(humanPrompt.toLowerCase() === "paper") {
@@ -27,3 +30,51 @@ function getHumanChoice() {
     }
     return humanChoice;
 }
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+function playRound(humanChoice, computerChoice) {
+    if (humanChoice == "Rock") {
+        if (computerChoice == "Scissors") {
+            console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+            humanScore ++;
+            return;
+        } else if (computerChoice =="Paper") {
+            console.log(`You loose! ${computerChoice} beats ${humanChoice}`);
+            computerScore ++;
+            return;
+        } else {
+            console.log("It's a tie! No points");
+            return;
+        };
+    } else if (humanChoice == "Paper") {
+        if (computerChoice == "Rock") {
+            console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+            humanScore ++;
+            return;
+        } else if (computerChoice =="Scissors") {
+            console.log(`You loose! ${computerChoice} beats ${humanChoice}`);
+            computerScore ++;
+            return;
+        } else {
+            console.log("It's a tie! No points");
+            return;
+        };
+    } else if (humanChoice == "Scissors") {
+        if (computerChoice == "Paper") {
+            console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+            humanScore ++;
+            return;
+        } else if (computerChoice =="Rock") {
+            console.log(`You loose! ${computerChoice} beats ${humanChoice}`);
+            computerScore ++;
+            return;
+        } else {
+            console.log("It's a tie! No points");
+            return;
+        };
+    }
+}
+
+playRound(humanSelection, computerSelection);

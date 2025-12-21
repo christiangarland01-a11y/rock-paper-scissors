@@ -1,0 +1,31 @@
+PLAY ROCK PAPER SCISSORS
+
+Get computer's choice between rock, paper, or scissors
+	choose random number between 1-3
+	assign choice based off of random number chosen
+	
+Get player's choice between rock, paper, or scissors
+	prompt player to type in choice
+
+compair two choices
+	9 possible combinations of choices
+		Player chooses Rock
+			computer chooses rock - tie
+			computer chooses paper - computer wins
+			computer chooses scissors - player wins
+		player chooses Paper
+			computer chooses rock - player wins
+			computer chooses paper - tie
+			computer chooses scissors - computer wins
+		player chooses scissors 
+			computer chooses rock - computer wins
+			computer chooses paper - player wins
+			computer chooses scissors - tie
+			
+display who won the round
+	keep tally of how many rounds each the player and computer have won
+	ties do not count as points
+	
+repeat for 5 rounds
+
+display who won the game after the 5th round
